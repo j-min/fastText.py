@@ -5,7 +5,7 @@ OUTPUT_PATH_SKIPGRAM = '/tmp/skipgram'
 OUTPUT_PATH_CBOW = '/tmp/cbow'
 
 # Learn the word representation using skipgram model
-skipgram = fasttext.skipgram(INPUT_TXT, OUTPUT_PATH, lr=0.02, dim=300, ws=5,
+skipgram = fasttext.skipgram(INPUT_TXT, OUTPUT_PATH_SKIPGRAM, lr=0.02, dim=300, ws=5,
         epoch=1, min_count=5, neg=5, loss='ns', bucket=2000000, minn=3, maxn=6,
         thread=4, t=1e-4, lr_update_rate=100)
 
@@ -13,7 +13,7 @@ skipgram = fasttext.skipgram(INPUT_TXT, OUTPUT_PATH, lr=0.02, dim=300, ws=5,
 print skipgram['word']
 
 # Learn the word representation using cbow model
-cbow = fasttext.cbow(INPUT_TXT, OUTPUT_PATH, lr=0.02, dim=300, ws=5,
+cbow = fasttext.cbow(INPUT_TXT, OUTPUT_PATH_CBOW, lr=0.02, dim=300, ws=5,
         epoch=1, min_count=5, neg=5, loss='ns', bucket=2000000, minn=3, maxn=6,
         thread=4, t=1e-4, lr_update_rate=100)
 
